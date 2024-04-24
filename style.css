@@ -231,6 +231,8 @@ footer {
 
 #noResultsBanner {
   align-content: center;
+  grid-column: span 10;
   grid-row: span 2;
+  
   text-align: center;
 }
