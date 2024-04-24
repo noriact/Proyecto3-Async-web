@@ -24,5 +24,12 @@ export const fetchPhotos = async (keyword) => {
     
 export const injectGallery = (unsplashResults) => {
     const galleryEntryPoint = document.querySelector("#gallery");
-    galleryEntryPoint.innerHTML = `${extractImagesFromResponse(unsplashResults).join('')}`;
+    if (unsplashResults.length > 0) {
+        galleryEntryPoint.innerHTML = `${extractImagesFromResponse(unsplashResults).join('')}`;
+    } else {
+        galleryEntryPoint.innerHTML = `<div id=noResultsBanner>
+                <p>We could not find any result for your query</p>
+                </div>
+        `
+    }
 };

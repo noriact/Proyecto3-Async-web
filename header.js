@@ -1,9 +1,9 @@
+import { exampleResponse } from "./exampleResponse";
 import { injectGallery, fetchPhotos } from "./gallery";
-import { exampleResponse } from "./main";
 
 const headerTemplate= () => {
   return `
-  <h1>I</h1>
+  <button id="homeButton"><h1>I</h1></button>
   <input type="text" placeholder="Search" id="searchinput"/>
   <nav id="headerButtons">
     <button id="searchButton"><i class="fa fa-search"></i></button>
@@ -32,6 +32,13 @@ const setUpHeaderListeners = () => {
     if (searchInput.value.length) {
       injectGallery(photos);
     }
+  });
+
+  const homeButton = document.querySelector("#homeButton");
+  homeButton.addEventListener("click", () => {
+    const searchInput = document.querySelector("#searchinput");
+    searchInput.value = "";
+    injectGallery(exampleResponse);
   });
 };
 

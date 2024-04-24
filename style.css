@@ -67,9 +67,12 @@ header {
   gap: 0.5rem;
 }
 
+#homeButton {
+  background-color: var(--logo);
+}
+
 header > h1 {
   align-content: center;
-  background-color: var(--logo);
   border-radius: 50%;
   color: var(--color-background);
   font-size: 1.5rem;
@@ -119,6 +122,7 @@ header .profileimg {
   grid-auto-flow: row dense;
   grid-auto-rows: 200px;
   padding: 0 1rem;
+  min-height: 30rem;
 }
 
 .image-card {
@@ -225,3 +229,8 @@ footer {
   }
 }
 
+#noResultsBanner {
+  align-content: center;
+  grid-row: span 2;
+  text-align: center;
+}
